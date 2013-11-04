@@ -1,5 +1,7 @@
 package lc;
 
+import lc.util.ListNode;
+
 /**
  * Given a linked list, determine if it has a cycle in it.
  * @author lli003
@@ -23,13 +25,4 @@ public class LinkedListCycle {
     return false;
   }
 
-}
-
-class ListNode{
-  int val;
-  ListNode next;
-  ListNode(int x){
-    val = x;
-    next = null;
-  }
 }
