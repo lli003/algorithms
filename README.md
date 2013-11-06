@@ -1,4 +1,6 @@
 Algorithms
 ==========
 
-Code sketch to solve various problems
+Code sketches of solving basic algorithmic problems, including:
+> leetcode
+> cc150
