@@ -26,11 +26,11 @@ public class RemoveElement {
       if (A[i] == elem){
         
         // skip the matched elements from the tail
-        while (l-1 > 0 && A[l-1] == elem)
+        while (l-1 >= 0 && A[l-1] == elem)
           l--;
         
         // swap the elements
-        if (l-1 >= i){
+        if (l-1 > i){
           int temp = A[i];
           A[i] = A[l-1];
           A[l-1] = temp;
