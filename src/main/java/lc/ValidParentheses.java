@@ -12,34 +12,28 @@ The brackets must close in the correct order, "()" and "()[]{}" are all valid bu
 public class ValidParentheses {
 
   public boolean isValid(String s) {
+    assert(s != null);
     if (s.length() == 0)
-      return true;
-
-    int l = s.length();
-    int i = 0;
+        return true;
+        
     Stack<Character> stack = new Stack<Character>();
-    while (i < l) {
-      if (s.charAt(i) == '[' || s.charAt(i) == '{' || s.charAt(i) == '(')
-        stack.push(s.charAt(i));
-      else if (s.charAt(i) == ']') {
-        if (!stack.isEmpty() && stack.peek() == '[')
-          stack.pop();
-        else
-          return false;
-      } else if (s.charAt(i) == '}') {
-        if (!stack.isEmpty() && stack.peek() == '{')
-          stack.pop();
-        else
-          return false;
-      } else if (s.charAt(i) == ')') {
-        if (!stack.isEmpty() && stack.peek() == '(')
-          stack.pop();
-        else
-          return false;
-      }
-      i++;
+    for (int i = 0; i < s.length(); i++){
+        if (s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{'){
+            stack.push(s.charAt(i));
+        } else {
+            if (stack.empty())
+                return false;
+            if (s.charAt(i) == ')' && stack.pop() != '(')
+                return false;
+            if (s.charAt(i) == ']' && stack.pop() != '[')
+                return false;
+            if (s.charAt(i) == '}' && stack.pop() != '{')
+                return false;
+        }
     }
-    return stack.isEmpty();
+    if (!stack.empty())
+        return false;
+    return true;
   }
 
 }
