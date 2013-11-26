@@ -79,5 +79,40 @@ public class ThreeSum {
     else
       return -1;
   }
+  
+  /**
+   * O(n^2)
+   * @param num
+   * @return
+   */
+  public ArrayList<ArrayList<Integer>> threeSum2(int[] num) {
+    assert(num != null);
+    
+    ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+    if (num.length < 3)
+        return result;
+    Set<ArrayList<Integer>> unique = new HashSet<ArrayList<Integer>>();
+    
+    Arrays.sort(num);
+    
+    for (int i = 0; i < num.length - 2; i++){
+        for (int j = i+1, k = num.length - 1; j < k;){
+            if (num[i] + num[j] + num[k] == 0){
+                ArrayList<Integer> rev = new ArrayList<Integer>();
+                rev.add(num[i]);
+                rev.add(num[j]);
+                rev.add(num[k]);
+                unique.add(rev);
+                j++;
+                k--;
+            } else if (num[i] + num[j] + num[k] < 0)
+                j++;
+            else
+                k--;
+        }
+    }
+    
+    return new ArrayList<ArrayList<Integer>>(unique);
+}
 
 }
