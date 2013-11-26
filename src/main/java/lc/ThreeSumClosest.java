@@ -62,5 +62,43 @@ public class ThreeSumClosest {
     }
     return new int[] { start, start };
   }
+  
+  /**
+   * O(n^2)
+   * @param num
+   * @param target
+   * @return
+   */
+  public int threeSumClosest2(int[] num, int target) {
+    assert(num != null);
+    
+    if (num.length < 3)
+        return 0;
+        
+    Arrays.sort(num);
+    
+    int close = target;
+    int diff = Integer.MAX_VALUE;
+    int sum = 0;
+    for (int i = 0; i < num.length - 2; i++){
+        for (int j = i+1, k = num.length - 1; j < k;){
+            sum = num[i] + num[j] + num[k];
+            if (sum == target)
+                return sum;
+            else {
+              if (Math.abs(sum - target) < diff){
+                close = sum;
+                diff = Math.abs(sum - target);
+              }
+              if (sum < target)
+                j++;
+              else
+                k--;
+            }
+        }
+    }
+    
+    return close;
+}
 
 }
