@@ -25,4 +25,38 @@ public class SearchInsertPosition {
     
     return A.length;
   }
+  
+  /**
+   * O(lgn) solution
+   * @param A
+   * @param target
+   * @return
+   */
+  public int searchInsert2(int[] A, int target){
+    assert(A != null);
+    
+    if (A.length == 0)
+      return 0;
+    
+    if (A[0] >= target)
+      return 0;
+    if (A[A.length - 1] < target)
+      return A.length;
+    
+    int l = 0, r = A.length - 1;
+    while (l < r){
+      int m = l + (r-l)/2;
+      if (A[m] == target)
+        return m;
+      else if (A[m] < target)
+        l = m + 1;
+      else
+        r = m - 1;
+    }
+    
+    if (A[l] >= target)
+      return l;
+    else
+      return l+1;
+  }
 }
