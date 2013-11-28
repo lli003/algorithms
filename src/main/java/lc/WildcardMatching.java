@@ -31,8 +31,6 @@ public class WildcardMatching {
    * @return
    */
   public boolean isMatch(String s, String p) {
-    // IMPORTANT: Please reset any member data you declared, as
-    // the same Solution instance will be reused for each test case.
     assert (s != null && p != null);
     return match(s, p, 0, 0);
   }
