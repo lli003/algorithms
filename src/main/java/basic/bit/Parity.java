@@ -21,10 +21,16 @@ public class Parity {
     return r;
   }
   
+  /**
+   * remove the least significant bit from the number
+   * @param num
+   * @return
+   */
   public static short parity2(long num){
     short r = 0;
     while (num != 0){
       r ^= 1;
+      /* remove the least significant bit from the number. */
       num &= (num-1);
     }
     return r;
