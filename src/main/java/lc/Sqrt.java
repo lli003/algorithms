@@ -2,6 +2,7 @@ package lc;
 
 /**
  * Implement int sqrt(int x).
+ * and double sqrt(double x)
 
 Compute and return the square root of x.
  * @author lli003
@@ -14,7 +15,7 @@ public class Sqrt {
    * @param x
    * @return
    */
-  public int sqrt(int x){
+  public static int sqrt(int x){
     if (x < 0)
       return -1;
     
@@ -33,6 +34,28 @@ public class Sqrt {
     }
     
     return start;
+  }
+  
+  /**
+   * newton's method
+   * @param x
+   * @return
+   */
+  public static double sqrt(double x){
+    if (x < 0)
+      return Double.NaN;
+    
+    double eps = 1E-15;
+    
+    double t = x;
+    while (Math.abs(t - x/t) > eps*t){
+      t = (x/t + t) / 2;
+    }
+    return t;
+  }
+  
+  public static void main(String[] args){
+    System.out.println(Sqrt.sqrt(1000000.0));
   }
 
 }
