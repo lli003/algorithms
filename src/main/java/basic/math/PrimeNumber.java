@@ -1,4 +1,4 @@
-package other;
+package basic.math;
 
 public class PrimeNumber {
 
