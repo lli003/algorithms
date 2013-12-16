@@ -42,5 +42,43 @@ public class BlockingQueue<T> {
     }
     return queue.remove();
   }
+  
+  public static void main(String[] args){
+    BlockingQueue<Integer> queue = new BlockingQueue<Integer>(10);
+    Worker[] workers = new Worker[2];
+    for (int i = 0; i < workers.length; i++){
+      workers[i] = new Worker(queue);
+      workers[i].start();
+    }
+    
+    for (int i = 0; i < 100; i++){
+      try {
+        queue.enqueue(i);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
+  }
 
+}
+
+class Worker extends Thread {
+  
+  BlockingQueue<Integer> queue;
+  Worker(BlockingQueue<Integer> queue){
+    this.queue = queue;
+  }
+  
+  public void run(){
+    try{
+      while(true){
+        Integer i = queue.dequeue();
+        if (i == null)
+          break;
+        System.out.println(i);
+      }
+    } catch (InterruptedException e){
+      e.printStackTrace();
+    }
+  }
 }
