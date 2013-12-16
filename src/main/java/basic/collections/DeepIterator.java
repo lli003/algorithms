@@ -1,5 +1,6 @@
 package basic.collections;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -93,6 +94,27 @@ public class DeepIterator<T> implements Iterator<T> {
 
   public void remove() {
     throw new UnsupportedOperationException();
+  }
+  
+  public static void main(String[] args){
+    
+    ArrayList<Object> list = new ArrayList<Object>();
+    list.add(1);
+    ArrayList<Integer> i1 = new ArrayList<Integer>();
+    i1.add(2);
+    i1.add(3);
+    list.add(i1);
+    
+    list.add(4);
+    ArrayList<Integer> i2 = new ArrayList<Integer>();
+    i2.add(5);
+    i2.add(6);
+    list.add(i2);
+    
+    DeepIterator ni = new DeepIterator(list);
+    while (ni.hasNext()){
+      System.out.println((Integer)ni.next());
+    }
   }
 
 }
