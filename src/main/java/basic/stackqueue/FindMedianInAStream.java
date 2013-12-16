@@ -1,4 +1,4 @@
-package basic.ds;
+package basic.stackqueue;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
