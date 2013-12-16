@@ -7,11 +7,11 @@ public class Queue<T> {
   Stack<T> inStack = new Stack<T>();
   Stack<T> outStack = new Stack<T>();
   
-  public void enQueue(T t){
+  public void enqueue(T t){
     inStack.push(t);
   }
   
-  public T deQueue(){
+  public T dequeue(){
     if (outStack.empty()){
       while (!inStack.empty()){
         outStack.push(inStack.pop());
@@ -33,10 +33,10 @@ public class Queue<T> {
   
   public static void main(String[] args){
     Queue<Integer> queue = new Queue<Integer>();
-    queue.enQueue(1);
-    queue.enQueue(2);
+    queue.enqueue(1);
+    queue.enqueue(2);
     System.out.println(queue.size());
-    System.out.println(queue.deQueue());
+    System.out.println(queue.dequeue());
     System.out.println(queue.size());
   }
 
