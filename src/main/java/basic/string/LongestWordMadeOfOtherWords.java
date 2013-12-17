@@ -7,6 +7,8 @@ import java.util.Comparator;
  * find the longest word made of other words
  * basic idea: first sort the words based on length in a desc manner
  * then for each word, try to check if it can be replaced by other words
+ * 
+ * Potential issue: not work after replacing a long word while the original word can be made of shorter words
  * @author leili
  *
  */
