@@ -2,6 +2,7 @@ package cc150.chapter01;
 
 /**
  * remove duplicate characters in a string without using additional buffer
+ * with some problems of test case "ababababa"
  * @author leili
  *
  */
@@ -9,7 +10,7 @@ public class Question3 {
 
   /**
    * basic idea: check the characters one by one, each time starting from the beginning of the string
-   * if duplicates found, then swap the duplicate character to the end of the char array
+   * if duplicates found, then swap the duplicate character to the end of the array
    * @param s
    * @return
    */
