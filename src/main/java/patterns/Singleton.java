@@ -22,5 +22,17 @@ public class Singleton {
   public static synchronized int getCount(){
     return count;
   }
+  
+  /* another implementation of thread-safe singleton.
+   * basic idea: use a lazy holder that contains a final object.
+   * when getInstance() is invoked, LazyHolder class is loaded and initialized,
+   * which will result in the static variable instance being initialized. */
+  private static class LazyHolder {
+    private static final Singleton instance = new Singleton();
+  }
+  
+  public static Singleton getInstance2(){
+    return LazyHolder.instance;
+  }
 
 }
