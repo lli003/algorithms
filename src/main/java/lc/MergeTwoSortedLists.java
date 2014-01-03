@@ -49,20 +49,26 @@ public class MergeTwoSortedLists {
     if (l1 == null) return l2;
     if (l2 == null) return l1;
     
+    /* two pointers, one stores the smaller node from one list, the other stores the larger node from the other list. */
     ListNode c1 = l1.val <= l2.val ? l1 : l2;
     ListNode c2 = l1.val <= l2.val ? l2 : l1;
+    
+    /* go through two lists. */
     while (c1.next != null && c2 != null){
+        /* if c2 is in between c1 and c1.next. */
         if (c1.val <= c2.val && c2.val <= c1.next.val){
             ListNode tmp = c2.next;
             c2.next = c1.next;
             c1.next = c2;
             c1 = c1.next;
             c2 = tmp;
-        } else
+        } else {
             c1 = c1.next;
+        }
     }
-    if (c1.next == null)
+    if (c1.next == null){
         c1.next = c2;
+    }
     return l1.val <= l2.val ? l1 : l2;
   }
   
