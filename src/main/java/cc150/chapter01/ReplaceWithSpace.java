@@ -5,7 +5,7 @@ package cc150.chapter01;
  * @author leili
  *
  */
-public class Question5 {
+public class ReplaceWithSpace {
   
   public String replaceSpace(String s){
     assert(s != null);

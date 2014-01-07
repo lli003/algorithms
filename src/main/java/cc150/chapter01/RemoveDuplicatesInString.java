@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @author leili
  *
  */
-public class Question3 {
+public class RemoveDuplicatesInString {
 
   /**
    * basic idea: use additional space to store characters seen so far

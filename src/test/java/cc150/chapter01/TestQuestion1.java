@@ -6,7 +6,7 @@ public class TestQuestion1 {
 
   @Test
   public void testIsUnique() {
-    Question1 q1 = new Question1();
+    UniqueCharacters q1 = new UniqueCharacters();
     
     System.out.println(q1.isUnique("123abc123"));
     System.out.println(q1.isUnique("abca"));

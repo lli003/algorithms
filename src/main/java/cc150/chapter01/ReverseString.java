@@ -5,7 +5,7 @@ package cc150.chapter01;
  * @author leili
  *
  */
-public class Question2 {
+public class ReverseString {
   
   public String reverse(String s){
     assert(s != null);

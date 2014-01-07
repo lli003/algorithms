@@ -6,7 +6,7 @@ public class TestQuestion5 {
 
   @Test
   public void testReplaceSpace() {
-    Question5 q5 = new Question5();
+    ReplaceWithSpace q5 = new ReplaceWithSpace();
     System.out.println(q5.replaceSpace("abc"));
     System.out.println(q5.replaceSpace(" abc"));
     System.out.println(q5.replaceSpace("abc "));

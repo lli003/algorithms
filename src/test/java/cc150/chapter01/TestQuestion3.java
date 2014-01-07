@@ -6,7 +6,7 @@ public class TestQuestion3 {
 
   @Test
   public void testRemoveDuplicates() {
-    Question3 q3 = new Question3();
+    RemoveDuplicatesInString q3 = new RemoveDuplicatesInString();
     System.out.println(q3.removeDuplicates("abcd"));
     System.out.println(q3.removeDuplicates("aaad"));
     System.out.println(q3.removeDuplicates("aaaa"));

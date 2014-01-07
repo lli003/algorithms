@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @author leili
  *
  */
-public class Question1 {
+public class UniqueCharacters {
   
   /**
    * basic idea: use an additional array/hashmap to store the characters

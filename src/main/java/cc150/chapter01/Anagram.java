@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @author leili
  *
  */
-public class Question4 {
+public class Anagram {
 
   /**
    * basic idea: sort the characters of each string, and then check one by one
