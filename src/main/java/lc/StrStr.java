@@ -66,6 +66,8 @@ public class StrStr {
       }
     }
     
+    // m -- the beginning of the current match in haystack
+    // i -- the current index of needle
     int m = 0, i = 0;
     while (m + i < haystack.length()){
       if (haystack.charAt(m+i) == needle.charAt(i)){
@@ -73,6 +75,7 @@ public class StrStr {
           return haystack.substring(m);
         i++;
       } else {
+        // look forward to m, for haystack
         m = m + i - table[i];
         if (table[i] > - 1)
           i = table[i];
