@@ -1,5 +1,7 @@
 package basic.math;
 
+import java.math.BigInteger;
+
 public class FactorialDigitSum {
   
   public int facSum(int n){
@@ -33,6 +35,25 @@ public class FactorialDigitSum {
     return facSum;
   }
   
+  public BigInteger fac(int n){
+    BigInteger sum = BigInteger.valueOf(1);
+    int i = 1;
+    while ( i <= n){
+      sum = sum.multiply(BigInteger.valueOf(i));
+      i++;
+    }
+    return sum;
+  }
+  
+  public int facSum2(BigInteger sum){
+    String res = sum.toString();
+    int total = 0;
+    for (int i = 0; i < res.length(); i++){
+      total += Integer.valueOf(res.charAt(i) + "");
+    }
+    return total;
+  }
+  
   public static void main(String[] args){
     FactorialDigitSum fd = new FactorialDigitSum();
     System.out.println(fd.facSum(1));
@@ -40,6 +61,11 @@ public class FactorialDigitSum {
     System.out.println(fd.facSum(10));
     System.out.println(fd.facSum(100));
     System.out.println(fd.facSum(200));
+    System.out.println(fd.facSum2(fd.fac(1)));
+    System.out.println(fd.facSum2(fd.fac(5)));
+    System.out.println(fd.facSum2(fd.fac(10)));
+    System.out.println(fd.facSum2(fd.fac(100)));
+    System.out.println(fd.facSum2(fd.fac(200)));
   }
 
 }
