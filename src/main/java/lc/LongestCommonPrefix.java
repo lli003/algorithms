@@ -1,9 +1,13 @@
 package lc;
 
+import java.util.Arrays;
+
 public class LongestCommonPrefix {
 
   /**
-   * Write a function to find the longest common prefix string amongst an array of strings.
+   * Write a function to find the longest common prefix string amongst an array
+   * of strings.
+   * 
    * @param strs
    * @return
    */
@@ -31,6 +35,36 @@ public class LongestCommonPrefix {
         break;
     }
     return sb.toString();
+  }
+
+  /**
+   * sort the array first to ensure the increasing length
+   * @param strs
+   * @return
+   */
+  public String longestCommonPrefix2(String[] strs) {
+    if (strs.length == 0)
+      return "";
+
+    Arrays.sort(strs);
+
+    for (int i = 0; i < strs[0].length(); i++) {
+      for (int j = 1; j < strs.length; j++) {
+        if (strs[j].charAt(i) != strs[j - 1].charAt(i))
+          return strs[0].substring(0, i);
+      }
+    }
+    return strs[0];
+  }
+  
+  public static void main(String[] args){
+    String[] strs = {"aaac", "aaa", "aa"};
+    Arrays.sort(strs);
+    for (String s : strs)
+      System.out.println(s);
+    
+    LongestCommonPrefix lcp = new LongestCommonPrefix();
+    System.out.println(lcp.longestCommonPrefix2(strs));
   }
 
 }
