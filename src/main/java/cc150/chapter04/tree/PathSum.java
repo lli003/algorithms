@@ -1,4 +1,4 @@
-package cc150.chapter04;
+package cc150.chapter04.tree;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package cc150.chapter01;
+package cc150.chapter01.string;
 
 /**
  * reverse a C-style string

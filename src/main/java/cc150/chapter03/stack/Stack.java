@@ -1,4 +1,4 @@
-package cc150.chapter03;
+package cc150.chapter03.stack;
 
 public class Stack {
   

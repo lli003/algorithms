@@ -1,4 +1,4 @@
-package cc150.chapter01;
+package cc150.chapter01.string;
 
 /**
  * replace the space characters in a string using '%20'

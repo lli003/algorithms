@@ -2,6 +2,8 @@ package cc150.chapter01;
 
 import org.junit.Test;
 
+import cc150.chapter01.string.UniqueCharacters;
+
 public class TestQuestion1 {
 
   @Test
