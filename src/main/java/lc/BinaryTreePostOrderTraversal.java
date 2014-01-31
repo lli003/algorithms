@@ -6,7 +6,7 @@ import java.util.Stack;
 import lc.util.TreeNode;
 
 /**
- * Binary Tree Postorder Traversal Total Accepted: 36 Total Submissions: 104 My Submissions
+ * Binary Tree Postorder Traversal
 Given a binary tree, return the postorder traversal of its nodes' values.
 
 For example:
